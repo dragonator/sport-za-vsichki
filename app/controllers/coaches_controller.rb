@@ -1,5 +1,6 @@
 class CoachesController < ApplicationController
   before_action :set_coach, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /coaches
   # GET /coaches.json
@@ -14,7 +15,6 @@ class CoachesController < ApplicationController
 
   # GET /coaches/new
   def new
-    @coach = Coach.new
   end
 
   # GET /coaches/1/edit

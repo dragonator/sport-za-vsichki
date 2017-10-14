@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
-  belongs_to :coach
-  belongs_to :sport_centre
+  belongs_to :coach, required: false
+  belongs_to :sport_centre, required: false
 end

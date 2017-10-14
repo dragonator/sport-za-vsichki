@@ -1,5 +1,6 @@
 class SportCentersController < ApplicationController
   before_action :set_sport_center, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /sport_centers
   # GET /sport_centers.json
@@ -14,7 +15,6 @@ class SportCentersController < ApplicationController
 
   # GET /sport_centers/new
   def new
-    @sport_center = SportCenter.new
   end
 
   # GET /sport_centers/1/edit

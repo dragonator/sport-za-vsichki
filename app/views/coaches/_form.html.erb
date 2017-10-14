@@ -1,104 +1,113 @@
-<%= form_with(local: true, :html => {:class => "form-horizontal"}) do |form| %>
-  <br />
-  <p>
-    <label for="coach_name">Име и фамилия:</label>
-    <%= form.text_field :name, id: :coach_name, class: 'form-control', placeholder: 'Име и фамилия', name: 'coach_name' %>
-  </p>
-  <p>
-    <label for="coach_email">E-mail:</label>
-    <%= form.text_field :name, id: :coach_email, class: 'form-control', placeholder: 'E-mail', name: 'coach_email' %>
-  </p> 
-  <p>
-    <label for="coach_password">Парола:</label>
-    <%= form.text_field :name, id: :coach_password, class: 'form-control', placeholder: 'Парола', name: 'coach_password' %>
-  </p>
-  <p>
-    <label for="coach_password_repeat">Повтаряне на паролата:</label>
-    <%= form.text_field :name, id: :coach_password_repeat, class: 'form-control', placeholder: 'Повтаряне на паролата', name: 'coach_password_repeat' %>
-  </p>
-  <p>
-    <label for="coach_phone">Телефон:</label>
-    <%= form.text_field :name, id: :coach_phone, class: 'form-control', placeholder: 'Телефон', name: 'coach_phone' %>
-  </p>
-  <p>
-    <label for="coach_birthdate">Дата на раждане:</label>
-    <%= form.text_field :name, id: :coach_birthdate, class: 'form-control datepicker', placeholder: 'Дата на раждане', name: 'coach_birthdate' %>
-  </p>
-
-  <p>
-    <h2>Специализация</h2>
+<div class="forms">
+  <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-6">
-            <h3>Спортове</h3>
-             <ul>
-                <li>
-                    <label for="sport_1">Плуване</label>
-                    <input type="checkbox" name="sport_1" value="Плуване" >
-                </li>
-                <li>
-                    <label for="sport_2">Ветроходство</label>
-                    <input type="checkbox" name="sport_2" value="Ветроходство" >
-                </li>
-                 <li>
-                    <label for="sport_3">Унидсърф</label>
-                    <input type="checkbox" name="sport_3" value="Унидсърф" >
-                </li>
-                 <li>
-                    <label for="sport_4">Водна топка</label>
-                    <input type="checkbox" name="sport_4" value="Водна топка" >
-                </li>
-                 <li>
-                    <label for="sport_5">Волейбол</label>
-                    <input type="checkbox" name="sport_5" value="Волейбол" >
-                </li>
-                <li>
-                    <label for="sport_6">Футбол</label>
-                    <input type="checkbox" name="sport_6" value="Футбол" >
-                </li>
-                 <li>
-                    <label for="sport_7">Художествена гимнастика</label>
-                    <input type="checkbox" name="sport_7" value="Художествена гимнастика" >
-                </li>
-                 <li>
-                    <label for="sport_8">Спортни танци</label>
-                    <input type="checkbox" name="sport_8" value="Спортни танци" >
-                </li>
-            </ul>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <h3>Рехабилитация</h3>
-             <ul>
-                <li>
-                    <label for="rehab_1">Вани</label>
-                    <input type="checkbox" name="sport_1" value="Вани" >
-                </li>
-                <li>
-                    <label for="rehab_2">Басейн подводна гиманстика</label>
-                    <input type="checkbox" name="rehab_2" value="Басейн подводна гиманстика" >
-                </li>
-                <li>
-                    <label for="rehab_3">Луголечение</label>
-                    <input type="checkbox" name="rehab_3" value="Луголечение" >
-                </li>
-                <li>
-                    <label for="rehab_4">Парафинолечение</label>
-                    <input type="checkbox" name="rehab_4" value="Парафинолечение" >
-                </li>
-                <li>
-                    <label for="rehab_5">Физиотерапия</label>
-                    <input type="checkbox" name="rehab_5" value="Физиотерапия" >
-                </li>
-                <li>
-                    <label for="rehab_6">Масаж</label>
-                    <input type="checkbox" name="rehab_6" value="Масаж" >
-                </li>
-                <li>
-                    <label for="rehab_7">Кинезитерапия</label>
-                    <input type="checkbox" name="rehab_7" value="Кинезитерапия" >
-                </li>                                                        
-            </ul>
-        </div>
+      <div class="col-xs-12">
+        <% @coach = Coach.new %>
+        <%= form_for @coach, url: {controller: 'coaches', action: 'create'}, :html => {:class => "form-horizontal"} do |form| %>
+          <br />
+          <p>
+            <label for="coach_name">Име и фамилия:</label>
+            <%= form.text_field :name, id: :coach_name, class: 'form-control', placeholder: 'Име и фамилия' %>
+          </p>
+          <p>
+            <label for="coach_email">E-mail:</label>
+            <%= form.text_field :email, id: :coach_email, class: 'form-control', placeholder: 'E-mail' %>
+          </p> 
+          <p>
+            <label for="coach_password">Парола:</label>
+            <%= form.text_field :encrypted_password, id: :coach_password, class: 'form-control', placeholder: 'Парола' %>
+          </p>
+          <p>
+            <label for="coach_password_repeat">Повтаряне на паролата:</label>
+            <%= form.text_field :encrypted_password, id: :coach_password_repeat, class: 'form-control', placeholder: 'Повтаряне на паролата' %>
+          </p>
+          <p>
+            <label for="coach_phone">Телефон:</label>
+            <%= form.text_field :phone_number, id: :coach_phone, class: 'form-control', placeholder: 'Телефон' %>
+          </p>
+          <p>
+            <label for="coach_birthdate">Дата на раждане:</label>
+            <%= form.text_field :date_of_birth, id: :coach_birthdate, class: 'form-control datepicker', placeholder: 'Дата на раждане' %>
+          </p>
+
+          <p>
+            <h2>Специализация</h2>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <h3>Спортове</h3>
+                     <ul>
+                        <li>
+                            <label for="sport_1">Плуване</label>
+                            <input type="checkbox" name="sport_1" value="Плуване" >
+                        </li>
+                        <li>
+                            <label for="sport_2">Ветроходство</label>
+                            <input type="checkbox" name="sport_2" value="Ветроходство" >
+                        </li>
+                         <li>
+                            <label for="sport_3">Унидсърф</label>
+                            <input type="checkbox" name="sport_3" value="Унидсърф" >
+                        </li>
+                         <li>
+                            <label for="sport_4">Водна топка</label>
+                            <input type="checkbox" name="sport_4" value="Водна топка" >
+                        </li>
+                         <li>
+                            <label for="sport_5">Волейбол</label>
+                            <input type="checkbox" name="sport_5" value="Волейбол" >
+                        </li>
+                        <li>
+                            <label for="sport_6">Футбол</label>
+                            <input type="checkbox" name="sport_6" value="Футбол" >
+                        </li>
+                         <li>
+                            <label for="sport_7">Художествена гимнастика</label>
+                            <input type="checkbox" name="sport_7" value="Художествена гимнастика" >
+                        </li>
+                         <li>
+                            <label for="sport_8">Спортни танци</label>
+                            <input type="checkbox" name="sport_8" value="Спортни танци" >
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <h3>Рехабилитация</h3>
+                     <ul>
+                        <li>
+                            <label for="rehab_1">Вани</label>
+                            <input type="checkbox" name="sport_1" value="Вани" >
+                        </li>
+                        <li>
+                            <label for="rehab_2">Басейн подводна гиманстика</label>
+                            <input type="checkbox" name="rehab_2" value="Басейн подводна гиманстика" >
+                        </li>
+                        <li>
+                            <label for="rehab_3">Луголечение</label>
+                            <input type="checkbox" name="rehab_3" value="Луголечение" >
+                        </li>
+                        <li>
+                            <label for="rehab_4">Парафинолечение</label>
+                            <input type="checkbox" name="rehab_4" value="Парафинолечение" >
+                        </li>
+                        <li>
+                            <label for="rehab_5">Физиотерапия</label>
+                            <input type="checkbox" name="rehab_5" value="Физиотерапия" >
+                        </li>
+                        <li>
+                            <label for="rehab_6">Масаж</label>
+                            <input type="checkbox" name="rehab_6" value="Масаж" >
+                        </li>
+                        <li>
+                            <label for="rehab_7">Кинезитерапия</label>
+                            <input type="checkbox" name="rehab_7" value="Кинезитерапия" >
+                        </li>                                                        
+                    </ul>
+                </div>
+            </div>
+          </p>  
+          <%= form.submit name: :submit_form, value: 'Изпрати', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
     </div>
-  </p>  
-  <%= form.submit name: :submit_form, value: 'Изпрати', class: 'btn btn-primary' %>
-<% end %>
+  </div>
+</div>

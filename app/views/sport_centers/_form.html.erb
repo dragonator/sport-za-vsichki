@@ -1,34 +1,43 @@
-<%= form_with(local: true) do |form| %>
-  <br />
-  <p>
-    <label for="centur_name">Спортен център:</label>
-    <%= form.text_field :name, id: :centur_name, class: 'form-control', placeholder: 'Име и фамилия', name: 'centur_name' %>
-  </p>
-  <p>
-    <label for="centur_email">E-mail:</label>
-    <%= form.text_field :name, id: :centur_email, class: 'form-control', placeholder: 'E-mail', name: 'centur_email' %>
-  </p> 
-  <p>
-    <label for="centur_password">Парола:</label>
-    <%= form.text_field :name, id: :centur_password, class: 'form-control', placeholder: 'Парола', name: 'centur_password' %>
-  </p>
-  <p>
-    <label for="centur_password_repeat">Повтаряне на паролата:</label>
-    <%= form.text_field :name, id: :centur_password_repeat, class: 'form-control', placeholder: 'Повтаряне на паролата', name: 'centur_password_repeat' %>
-  </p>
-  <p>
-    <label for="centur_phone">Телефон:</label>
-    <%= form.text_field :name, id: :centur_phone, class: 'form-control', placeholder: 'Телефон', name: 'centur_phone' %>
-  </p>
-  <p>
-    <label for="centur_location">Местоположение:</label>
-    <%= form.text_field :name, id: :centur_location, class: 'form-control datepicker', placeholder: 'Дата на раждане', name: 'centur_location' %>
-  </p>
-  <p>
-    <label for="centur_description">Описание:</label>
-    <%= form.text_area :description, id: :sport_center_description, name: :centur_description, class: 'form-control', placeholder: "Описание" %>
-  </p>
+<div class="forms">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <% @sport_center = SportCenter.new %>
+        <%= form_for @sport_center, url: {controller: 'sport_centers', action: 'create'} do |form| %>
+          <br />
+          <p>
+            <label for="centur_name">Спортен център:</label>
+            <%= form.text_field :name, id: :centur_name, class: 'form-control', placeholder: 'Име и фамилия' %>
+          </p>
+          <p>
+            <label for="centur_email">E-mail:</label>
+            <%= form.text_field :email, id: :centur_email, class: 'form-control', placeholder: 'E-mail' %>
+          </p> 
+          <p>
+            <label for="centur_password">Парола:</label>
+            <%= form.text_field :encrypted_password, id: :centur_password, class: 'form-control', placeholder: 'Парола' %>
+          </p>
+          <p>
+            <label for="centur_password_repeat">Повтаряне на паролата:</label>
+            <%= form.text_field :encrypted_password, id: :centur_password_repeat, class: 'form-control', placeholder: 'Повтаряне на паролата' %>
+          </p>
+          <p>
+            <label for="centur_phone">Телефон:</label>
+            <%= form.text_field :phone_number, id: :centur_phone, class: 'form-control', placeholder: 'Телефон' %>
+          </p>
+          <p>
+            <label for="centur_location">Местоположение:</label>
+            <%= form.text_field :location, id: :centur_location, class: 'form-control datepicker', placeholder: 'Дата на раждане' %>
+          </p>
+          <p>
+            <label for="centur_description">Описание:</label>
+            <%= form.text_area :description, id: :sport_center_description, name: :centur_description, class: 'form-control', placeholder: "Описание" %>
+          </p>
 
-  <br/>
-  <%= form.submit name: :submit_form, value: 'Изпрати', class: 'btn btn-primary' %>
-<% end %>
+          <br/>
+          <%= form.submit name: :submit_form, value: 'Изпрати', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

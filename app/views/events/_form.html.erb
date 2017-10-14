@@ -1,73 +1,53 @@
-<main class="registration">
-  <div class="header">
-      <div class="container ">
-          <div class="row">
-              <div class="col-xs-12 text-center">
-                  <h1>Спорт за Всички</h1>
-              </div>
-          </div>
-          
-      </div>
-  </div>
-  <div class="container ">
+<div class="forms">
+  <div class="container">
     <div class="row">
-      <div class="col-xs-12 text-center">
-        <h2>Добавяне на събитие</h2>
+      <div class="col-xs-12">
+        <%= form_for @event, model: event, url: {action: 'create'} do |form| %>
+          <div class="alert hidden" id="output_centur"></div>
+          <p>
+            <label for="category">Категория:</label>
+            <select class="form-control" name="category">
+              <option>--</option>
+              <optgroup label="Спортове">
+                <option>Плуване</option>
+                <option>Ветроходство</option>
+                <option>Унидсърф</option>
+                <option>Водна топка</option>
+                <option>Волейбол</option>
+                <option>Футбол</option>
+                <option>Художествена гимнастика</option>
+                <option>Спортни танци</option>
+              </optgroup>
+              <optgroup label="Рехабилитация">
+                <option>Вани</option>
+                <option>Басейн подводна гиманстика</option>
+                <option>Луголечение</option>
+                <option>Парафинолечение</option>
+                <option>Физиотерапия</option>
+                <option>Масаж</option>
+                <option>Кинезитерапия</option>
+              </optgroup>
+            </select>
+          </p>
+          <p>
+            <label for="event_date">Дата:</label>
+            <%= form.text_field :date, id: :event_date, class: "form-control datepicker", placeholder: "Дата" %>
+          </p>
+           <p>
+            <label for="event_location">Местоположение:</label>
+            <%= form.text_field :location, id: :event_location, class: "form-control", placeholder: "Местоположение" %>
+          </p>
+          <p>
+            <label for="event_couch">Име на треньор:</label>
+            <%= form.text_field :coach_name, id: :event_coach_name, class: "form-control", placeholder: "Име на треньор" %>
+          </p>
+           <p>
+            <label for="event_description">Описание:</label>
+            <%= form.text_area :description, class: "form-control", placeholder: "Описание", rows: 5 %>
+          </p>
+          <%= form.submit name: :submit_form, value: 'Изпрати', class: 'btn btn-primary' %>
+        <% end %>
       </div>
     </div>
   </div>
-  <div class="forms">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <%= form_with(model: event, local: true) do |form| %>
-          <form  method="post" class="form-horizontal" id="addEvent" action="">  
-            <div class="alert hidden" id="output_centur"></div>
-              <p>
-                <label for="centur_name">Категория:</label>
-                <select class="form-control" name="category">
-                    <option>--</option>
-                  <optgroup label="Спортове">
-                    <option>Плуване</option>
-                    <option>Ветроходство</option>
-                    <option>Унидсърф</option>
-                    <option>Водна топка</option>
-                    <option>Волейбол</option>
-                    <option>Футбол</option>
-                    <option>Художествена гимнастика</option>
-                    <option>Спортни танци</option>
-                  </optgroup>
-                  <optgroup label="Рехабилитация">
-                    <option>Вани</option>
-                    <option>Басейн подводна гиманстика</option>
-                    <option>Луголечение</option>
-                    <option>Парафинолечение</option>
-                    <option>Физиотерапия</option>
-                    <option>Масаж</option>
-                    <option>Кинезитерапия</option>
-                  </optgroup>
-                </select>
-              </p>
-              <p>
-                <label for="event_date">Дата:</label>
-                <%= form.text_field :date, id: :event_date, class: "form-control datepicker", placeholder: "Дата" %>
-              </p>
-               <p>
-                <label for="event_location">Местоположение:</label>
-                <%= form.text_field :location, id: :event_location, class: "form-control", placeholder: "Местоположение" %>
-              </p>
-              <p>
-                <label for="event_couch">Име на треньор:</label>
-                <%= form.text_field :coach_name, id: :event_coach_name, class: "form-control", placeholder: "Име на треньор" %>
-              </p>
-               <p>
-                <label for="event_description">Описание:</label>
-                <%= form.text_area :description, class: "form-control", placeholder: "Описание", rows: 5 %>
-              </p>
-            <%= form.submit value: 'Изпрати', class: 'btn btn-primary' %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
+</div>
