@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sport_center.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @sport_center.email %>
+</p>
+
+<p>
+  <strong>Encrypted password:</strong>
+  <%= @sport_center.encrypted_password %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @sport_center.location %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sport_center.description %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @sport_center.photo %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @sport_center.phone_number %>
+</p>
+
+<%= link_to 'Edit', edit_sport_center_path(@sport_center) %> |
+<%= link_to 'Back', sport_centers_path %>

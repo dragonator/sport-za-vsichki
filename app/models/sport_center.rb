@@ -1,0 +1,2 @@
+class SportCenter < ApplicationRecord
+end

@@ -1,0 +1,52 @@
+<%= form_with(model: sport_center, local: true) do |form| %>
+  <% if sport_center.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sport_center.errors.count, "error") %> prohibited this sport_center from being saved:</h2>
+
+      <ul>
+      <% sport_center.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :sport_center_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :sport_center_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :encrypted_password %>
+    <%= form.text_field :encrypted_password, id: :sport_center_encrypted_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, id: :sport_center_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :sport_center_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.text_field :photo, id: :sport_center_photo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number, id: :sport_center_phone_number %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
