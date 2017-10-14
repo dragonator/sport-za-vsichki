@@ -26,13 +26,8 @@
   </p>
   <p>
     <label for="centur_description">Описание:</label>
-    <textarea name="centur_description" class="form-control" placeholder="Описание" ></textarea>
+    <%= form.text_area :description, id: :sport_center_description, name: :centur_description, class: 'form-control', placeholder: "Описание" %>
   </p>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :sport_center_description %>
-  </div>
 
   <br/>
   <%= form.submit name: :submit_form, value: 'Изпрати', class: 'btn btn-primary' %>

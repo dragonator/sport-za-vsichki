@@ -5449,7 +5449,7 @@ button {
   border: none;
 }
 .header {
-  background: url('assets/header-image.jpg') center no-repeat;
+  background: url('header-image.jpg') center no-repeat;
   padding: 50px 0;
 }
 body .navbar {
