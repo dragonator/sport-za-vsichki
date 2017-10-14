@@ -7,7 +7,7 @@
 
     <title>Спорт за всички</title>
     <meta charset="utf-8" />
-    <base href="http://sport-za-vsichki.herokuapp.com" />
+    <base href="http://sport-za-vsichki.herokuapp.com/app/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0" />
 
     <link rel="stylesheet" href="assets/stylesheets/styles.css" type="text/css" />
@@ -24,6 +24,33 @@
   </head>
 
   <body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <nav class="navbar navbar-default">
+                      <div class="container-fluid">
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                          <ul class="nav navbar-nav">
+                            <li><a href="#">Начало</a></li>
+                            <li><a href="#">Регистрация</a></li>
+                            <li><a href="#">Добави събитие</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
     <p><%= yield %></p>
   </body>
 </html>
