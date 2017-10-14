@@ -45,3 +45,85 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<main class="registration">
+  <div class="header">
+      <div class="container ">
+          <div class="row">
+              <div class="col-xs-12 text-center">
+                  <h1>Спорт за Всички</h1>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+  <div class="container ">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2>Добавяне на събитие</h2>
+      </div>
+    </div>
+  </div>
+  <div class="forms">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <form  method="post" class="form-horizontal" id="addEvent" action="">  
+            <div class="alert hidden" id="output_centur"></div>
+              <p>
+                <label for="centur_name">Категория:</label>
+                <select class="form-control" name="event_category">
+                  <optgroup label="Спортове">
+                    <option>Плуване</option>
+                    <option>Ветроходство</option>
+                    <option>Унидсърф</option>
+                    <option>Водна топка</option>
+                    <option>Волейбол</option>
+                    <option>Футбол</option>
+                    <option>Художествена гимнастика</option>
+                    <option>Спортни танци</option>
+                  </optgroup>
+                  <optgroup label="Рехабилитация">
+                    <option>Вани</option>
+                    <option>Басейн подводна гиманстика</option>
+                    <option>Луголечение</option>
+                    <option>Парафинолечение</option>
+                    <option>Физиотерапия</option>
+                    <option>Масаж</option>
+                    <option>Кинезитерапия</option>
+                  </optgroup>
+                </select>
+              </p>
+              <p>
+                <label for="event_date">Дата:</label>
+                <input name="event_date" class="form-control datepicker" id="event_date" type="text" placeholder="Дата" />
+              </p>
+               <p>
+                <label for="event_location">Местоположение:</label>
+                <input name="event_location" class="form-control" id="event_location" type="text" placeholder="Местоположение" />
+              </p>
+              <p>
+                <label for="event_phone">Телефон за връзка:</label>
+                <input name="event_phone" class="form-control" id="event_phone" type="text" placeholder="Телефон за връзка" />
+              </p>
+              <p>
+                <label for="event_couch">Име на треньор:</label>
+                <input name="event_couch" class="form-control" id="event_couch" type="text" placeholder="Име на треньор" />
+              </p>
+               <p>
+                <label for="event_description">Описание:</label>
+                <textarea name="event_description" class="form-control" placeholder="Описание" rows="5" ></textarea>
+              </p>
+                     
+            
+                
+            <br/>
+            <input name="submit_form" type="submit" value="Изпрати" class="btn btn-primary"/>
+            
+          </form> 
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
