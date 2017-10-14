@@ -3,6 +3,5 @@ class ApplicationController < ActionController::Base
 
   def not_ready
     @message = "This app is not ready yet!"
-    render 'layouts/application'
   end
 end
