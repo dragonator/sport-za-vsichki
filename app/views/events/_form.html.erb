@@ -1,52 +1,3 @@
-<%= form_with(model: event, local: true) do |form| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-      <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category, id: :event_category %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location, id: :event_location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date, id: :event_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :event_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :coach_name %>
-    <%= form.text_field :coach_name, id: :event_coach_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_field :photo, id: :event_photo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-
 <main class="registration">
   <div class="header">
       <div class="container ">
@@ -69,11 +20,13 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
+          <%= form_with(model: event, local: true) do |form| %>
           <form  method="post" class="form-horizontal" id="addEvent" action="">  
             <div class="alert hidden" id="output_centur"></div>
               <p>
                 <label for="centur_name">Категория:</label>
-                <select class="form-control" name="event_category">
+                <select class="form-control" name="category">
+                    <option>--</option>
                   <optgroup label="Спортове">
                     <option>Плуване</option>
                     <option>Ветроходство</option>
@@ -97,31 +50,22 @@
               </p>
               <p>
                 <label for="event_date">Дата:</label>
-                <input name="event_date" class="form-control datepicker" id="event_date" type="text" placeholder="Дата" />
+                <%= form.text_field :date, id: :event_date, class: "form-control datepicker", placeholder: "Дата" %>
               </p>
                <p>
                 <label for="event_location">Местоположение:</label>
-                <input name="event_location" class="form-control" id="event_location" type="text" placeholder="Местоположение" />
-              </p>
-              <p>
-                <label for="event_phone">Телефон за връзка:</label>
-                <input name="event_phone" class="form-control" id="event_phone" type="text" placeholder="Телефон за връзка" />
+                <%= form.text_field :location, id: :event_location, class: "form-control", placeholder: "Местоположение" %>
               </p>
               <p>
                 <label for="event_couch">Име на треньор:</label>
-                <input name="event_couch" class="form-control" id="event_couch" type="text" placeholder="Име на треньор" />
+                <%= form.text_field :coach_name, id: :event_coach_name, class: "form-control", placeholder: "Име на треньор" %>
               </p>
                <p>
                 <label for="event_description">Описание:</label>
-                <textarea name="event_description" class="form-control" placeholder="Описание" rows="5" ></textarea>
+                <%= form.text_area :description, class: "form-control", placeholder: "Описание", rows: 5 %>
               </p>
-                     
-            
-                
-            <br/>
-            <input name="submit_form" type="submit" value="Изпрати" class="btn btn-primary"/>
-            
-          </form> 
+            <%= form.submit value: 'Изпрати', class: 'btn btn-primary' %>
+          <% end %>
         </div>
       </div>
     </div>
