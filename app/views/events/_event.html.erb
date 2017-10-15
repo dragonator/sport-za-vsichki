@@ -1,4 +1,26 @@
 <li class="col-xs-12 col-sm-4 event" data-groups='["sport_events"]'>
+  <% 
+    sport_events   = "['sport_events']"
+    rehab_sessions = "['rehab_sessions']"
+    categories = {
+      'Плуване' => sport_events,
+      'Ветроходство' => sport_events,
+      'Унидсърф' => sport_events,
+      'Водна топка' => sport_events,
+      'Волейбол' => sport_events,
+      'Футбол' => sport_events,
+      'Художествена гимнастика' => sport_events,
+      'Спортни танци' => sport_events,
+      'Вани' => rehab_sessions,
+      'Басейн подводна гиманстика' => rehab_sessions,
+      'Луголечение' => rehab_sessions,
+      'Парафинолечение' => rehab_sessions,
+      'Физиотерапия' => rehab_sessions,
+      'Масаж' => rehab_sessions,
+      'Кинезитерапия' => rehab_sessions,
+    }
+  %>
+<%= content_tag(:li, nil, class: "col-xs-12 col-sm-4 event", :data => {:'groups' => "#{categories[event.category]}"}) do  %>
   <div class="event-box">
     <div class="col-xs-12 ">
       <h2><%= event.category %></h2>
@@ -11,4 +33,4 @@
       <a href="" >Запиши се</a>
     </div>
   </div>
-</li>
+<% end %>

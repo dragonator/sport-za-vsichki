@@ -1,10 +1,4 @@
   $( function() {
-    $( ".datepicker" ).datepicker({
-	    changeMonth: true,
-      	changeYear: true,
-      	yearRange: '1930:2017',
-    });
-
      /* PROJECTS BLOCK START */
     if ($('#grid').length > 0){
         var $grid = $('#grid'), //locate what we want to sort

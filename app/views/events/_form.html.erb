@@ -5,33 +5,33 @@
         <%= form_for @event, model: event, url: {action: 'create'} do |form| %>
           <div class="alert hidden" id="output_centur"></div>
           <p>
-            <label for="category">Категория:</label>
-            <select class="form-control" name="category">
+            <%= form.label :category, "Категория:" %>
+            <%= form.select :category, nil, {}, { class: 'form-control'} do %>
               <option>--</option>
               <optgroup label="Спортове">
-                <option>Плуване</option>
-                <option>Ветроходство</option>
-                <option>Унидсърф</option>
-                <option>Водна топка</option>
-                <option>Волейбол</option>
-                <option>Футбол</option>
-                <option>Художествена гимнастика</option>
-                <option>Спортни танци</option>
+                <option value='Плуване'>Плуване</option>
+                <option value='Ветроходство'>Ветроходство</option>
+                <option value='Унидсърф'>Унидсърф</option>
+                <option value='Водна топка'>Водна топка</option>
+                <option value='Волейбол'>Волейбол</option>
+                <option value='Футбол'>Футбол</option>
+                <option value='Художествена гимнастика'>Художествена гимнастика</option>
+                <option value='Спортни танци'>Спортни танци</option>
               </optgroup>
               <optgroup label="Рехабилитация">
-                <option>Вани</option>
-                <option>Басейн подводна гиманстика</option>
-                <option>Луголечение</option>
-                <option>Парафинолечение</option>
-                <option>Физиотерапия</option>
-                <option>Масаж</option>
-                <option>Кинезитерапия</option>
+                <option value='Вани'>Вани</option>
+                <option value='Басейн подводна гиманстика'>Басейн подводна гиманстика</option>
+                <option value='Луголечение'>Луголечение</option>
+                <option value='Парафинолечение'>Парафинолечение</option>
+                <option value='Физиотерапия'>Физиотерапия</option>
+                <option value='Масаж'>Масаж</option>
+                <option value='Кинезитерапия'>Кинезитерапия</option>
               </optgroup>
-            </select>
+              <% end %>
           </p>
           <p>
             <label for="event_date">Дата:</label>
-            <%= form.text_field :date, id: :event_date, class: "form-control datepicker", placeholder: "Дата" %>
+            <%= form.text_field :date, id: :event_date, class: "form-control", placeholder: "Дата", type: 'date' %>
           </p>
            <p>
             <label for="event_location">Местоположение:</label>

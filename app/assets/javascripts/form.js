@@ -56,21 +56,5 @@ $(function(){
         $('#output_centur').removeClass().addClass('alert hidden').empty();
     }
 
-    $("#user_form").validate({
-        submitHandler: function(form) {
-            $(form).ajaxSubmit(options_users);
-        }
-    });
-    $("#couch_form").validate({
-        submitHandler: function(form) {
-            $(form).ajaxSubmit(options_couch);
-        }
-    });
-    $("#centur_form").validate({
-        submitHandler: function(form) {
-            $(form).ajaxSubmit(options_centur);
-        }
-    });
-        
 });
 

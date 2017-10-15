@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
-
   # GET /events
   # GET /events.json
   def index
@@ -25,6 +24,9 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    puts "++++++++++++++++++++"
+    p event_params
+    puts "++++++++++++++++++++"
     @event = Event.new(event_params)
 
     respond_to do |format|

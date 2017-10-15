@@ -5449,7 +5449,7 @@ button {
   border: none;
 }
 .header {
-  background: url('../images/header-image.jpg') center no-repeat;
+  background: url('header-image.jpg') center no-repeat;
   padding: 50px 0;
 }
 body .navbar {
@@ -5571,7 +5571,7 @@ h1 {
   font-size: 12px;
 }
 .home .header-image {
-  background: url('../images/header-image.jpg') center no-repeat;
+  background: url('header-image.jpg') center no-repeat;
   position: relative;
   height: 400px;
 }
@@ -5593,7 +5593,7 @@ h1 {
   padding: 20px 25px;
   display: table;
   margin-bottom: 30px;
-  background: url('../images/event_image.jpg') center no-repeat;
+  background: url('event_image.jpg') center no-repeat;
   background-size: cover;
   position: relative;
   margin-top: 20px;
