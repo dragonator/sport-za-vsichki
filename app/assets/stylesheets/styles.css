@@ -5449,7 +5449,7 @@ button {
   border: none;
 }
 .header {
-  background: url('header-image.jpg') center no-repeat;
+  background: url('../images/header-image.jpg') center no-repeat;
   padding: 50px 0;
 }
 body .navbar {
@@ -5468,7 +5468,7 @@ body .navbar ul li a {
   text-transform: uppercase;
   padding: 20px 15px;
 }
-.registration h1 {
+h1 {
   margin-bottom: 50px;
   width: 500px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -5569,4 +5569,142 @@ body .navbar ul li a {
 .forms ul li label {
   min-width: 200px;
   font-size: 12px;
+}
+.home .header-image {
+  background: url('../images/header-image.jpg') center no-repeat;
+  position: relative;
+  height: 400px;
+}
+.home .header-image:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.home .header-image h1 {
+  top: 150px;
+}
+.home .event-box {
+  border: 1px solid #9b9b9b;
+  box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px 25px;
+  display: table;
+  margin-bottom: 30px;
+  background: url('../images/event_image.jpg') center no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: 20px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.home .event-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.home .event-box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+.home .event-box h2 {
+  margin: 0 0 20px;
+  color: #fff;
+}
+.home .event-box a {
+  color: white;
+  background-color: transparent;
+  font-size: 16px;
+  padding: 10px 25px;
+  border: 1px solid white;
+  margin-top: 30px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.home .event-box a:hover {
+  color: red;
+  border-color: red;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.home .event-box .date {
+  font-size: 12px;
+  font-weight: 600;
+}
+.home .event-box p {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 300;
+}
+.home .event-box p span {
+  font-weight: 600;
+  color: #25ff00;
+}
+.filter-options {
+  margin: 50px 0;
+}
+.filter-options .home-btns {
+  background-color: transparent;
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+  position: relative;
+  padding: 0 40px;
+  cursor: pointer;
+}
+.filter-options .home-btns:before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: 0%;
+  width: 0%;
+  height: 1px;
+  background-color: #ff6b6b;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.filter-options .home-btns:after {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  margin-left: 0%;
+  width: 0%;
+  height: 1px;
+  background-color: #ff6b6b;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.filter-options .home-btns.active:before {
+  width: 30%;
+  margin-left: -15%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.filter-options .home-btns.active:after {
+  width: 20%;
+  margin-left: -10%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
