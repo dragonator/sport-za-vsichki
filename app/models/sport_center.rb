@@ -1,3 +1,3 @@
 class SportCenter < ApplicationRecord
-  has_many :events, required: false
+  has_many :events
 end
